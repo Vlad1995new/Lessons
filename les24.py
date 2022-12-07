@@ -2,18 +2,15 @@ import math
 
 
 def circle(R):
-    S = round((math.pi * R ** 2), 2)
-    return S
+    return round((math.pi * R ** 2), 2)
 
 
 def rectangle(a, b):
-    S = round((a * b), 2)
-    return S
+    return round((a * b), 2)
 
 
 def triangle(B, H):
-    S = round((B / 2 * H), 2)
-    return S
+    return round((B / 2 * H), 2)
 
 
 while True:
