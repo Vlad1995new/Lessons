@@ -5,7 +5,7 @@ class Animal:
         self.age = age
         self.who = who
 
-    def otvet(self):
+    def _otvet(self):
         if int(self.age[0:2]) >= 10:
             print(
                 self.name + ", с Вами уже " + self.age + ". Советуем пройти бессплатный профилактический медосмотр в нашей клинике!")
@@ -16,7 +16,7 @@ class Animal:
 
 # В класс из предыдущего урока добавьте три класса-наследника на ваше усмотрение.
 class Sex(Animal):
-    def __init__(self, name, age, who, sex):
+    def __init__(self, name, age=str("4 года"), who="кот", sex="мальчик"):
         super().__init__(name, age, who)
         self.sex = sex
 
@@ -25,6 +25,14 @@ class Sex(Animal):
             print("За консультацией обратитесь в 807 кабинет")
         else:
             print("За консультацией обратитесь в 808 кабинет")
+
+    def _otvet(self):
+        if int(self.age[0:2]) >= 10:
+            print(
+                self.name + ", с Вами уже " + self.age + ". Советуем пройти бессплатный профилактический медосмотр в нашей клинике!")
+        else:
+            print(
+                self.name + ", с Вами уже " + self.age + ". Советуем кормить 6 раз в день не большими порциями и выгуливать минимум 1 раз в день")
 
 
 class Weight(Animal):
@@ -41,10 +49,10 @@ class Weight(Animal):
             print("У вашего питомца нет лишнего веса")
 
 
-class Eat(Animal):
+class _Eat(Animal):
     def __init__(self, name, age, who, eat):
         super().__init__(name, age, who)
         self.eat = 'питание'
 
-    def num(self):
+    def __num(self):
         print("Для получения дополнительной информации о рационе своего питомца позвоните по номеру +374 хх ххх хх хх")
